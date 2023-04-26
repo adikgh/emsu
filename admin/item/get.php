@@ -60,7 +60,7 @@
 		$id = (mysqli_fetch_assoc(db::query("SELECT max(id) FROM `sana`")))['max(id)'] + 1;
 		$number = fun::sh_next_number();
 
-		$ins = db::query("INSERT INTO `sana`(`number`, `name`) VALUES ('$number', '$name', '$name')");
+		$ins = db::query("INSERT INTO `sana`(`number`, `name`) VALUES ('$number', '$name')");
 		if ($adres) $upd = db::query("UPDATE `sana` SET `address`='$adres' WHERE `id`='$id'");
 		if ($img) $upd = db::query("UPDATE `sana` SET `img`='$img' WHERE `id`='$id'");
 
@@ -142,10 +142,10 @@
 		$wb_price = strip_tags($_POST['wb_price']);
 		$img = strip_tags($_POST['img']);
 
-		if ($wb_type) $ins_li = db::query("UPDATE `number_id` SET `type_id` = '$wb_type' WHERE id = '$id'");
-		if ($wb_number) $ins_li = db::query("UPDATE `number_id` SET `door_id` = '$wb_number' WHERE id = '$id'");
-		if ($wb_price) $ins_li = db::query("UPDATE `number_id` SET `price` = '$wb_price' WHERE id = '$id'");
-		if ($img) $ins_li = db::query("UPDATE `number_id` SET `img` = '$img' WHERE id = '$id'");
+		if ($wb_type) $ins_li = db::query("UPDATE `number` SET `type_id` = '$wb_type' WHERE id = '$id'");
+		if ($wb_number) $ins_li = db::query("UPDATE `number` SET `door_id` = '$wb_number' WHERE id = '$id'");
+		if ($wb_price) $ins_li = db::query("UPDATE `number` SET `price` = '$wb_price' WHERE id = '$id'");
+		if ($img) $ins_li = db::query("UPDATE `number` SET `img` = '$img' WHERE id = '$id'");
 
 		echo 'yes';
 		exit();

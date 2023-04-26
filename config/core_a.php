@@ -66,7 +66,7 @@
 
 
     // setting
-    $ver = 3.412;
+    $ver = 3.413;
     $site = mysqli_fetch_array(db::query("select * from `site` where id = 2"));
     $site_set = [
         'header' => true,
