@@ -8,40 +8,38 @@
 				</a>
 			</div>
 			<div class="header_r">
-				<? if ($user_id): ?>
-					<div class="cmenu">
-						<a class="cmenu_i <?=($menu_name=='cours'?'cmenu_i_act':'')?>" href="/admin/catalog/">Шипажайлар</a>
-						<a class="cmenu_i <?=($menu_name=='reser'?'cmenu_i_act':'')?>" href="/admin/reser/">Брон</a>
-					</div>
-					<div class="menu">
-						<div class="menu_m menu_bars_clc">
-							<div class="menu_mn"><?=$user['name']?> <?=($user['surname']?substr($user['surname'],0,1).'.':'')?></div>
-							<div class="menu_bars">
-								<div class="menu_bars_c lazy_img" data-src="/assets/uploads/users/<?=$user['img']?>">
-									<?=($user['img']?'':'<i class="fal fa-user"></i>')?>
-								</div>
+				<div class="cmenu">
+					<a class="cmenu_i <?=($menu_name=='cours'?'cmenu_i_act':'')?>" href="/admin/catalog/">Шипажайлар</a>
+					<a class="cmenu_i <?=($menu_name=='reser'?'cmenu_i_act':'')?>" href="/admin/reser/">Брон</a>
+				</div>
+				<div class="menu">
+					<div class="menu_m menu_bars_clc">
+						<div class="menu_mn"><?=$user['name']?> <?=($user['surname']?substr($user['surname'],0,1).'.':'')?></div>
+						<div class="menu_bars">
+							<div class="menu_bars_c lazy_img" data-src="/assets/uploads/users/<?=$user['img']?>">
+								<?=($user['img']?'':'<i class="fal fa-user"></i>')?>
 							</div>
 						</div>
-						<div class="menu_c">
-							<div class="menu_ci user_edit_pop">
-								<div class="menu_cin"><i class="fal fa-user"></i></div>
-								<div class="menu_cih">Менің аккаунтым</div>
-							</div>
-							<div class="menu_ci user_ph_pop">
-								<div class="menu_cin"><i class="fal fa-mobile"></i></div>
-								<div class="menu_cih">Телефон номерім</div>
-							</div>
-							<div class="menu_ci company_edit_pop">
-								<div class="menu_cin"><i class="fal fa-cog"></i></div>
-								<div class="menu_cih">Бағдарлама баптауы</div>
-							</div>
-							<a class="menu_ci" href="/admin/exit.php">
-								<div class="menu_cin"><i class="fal fa-sign-out"></i></div>
-								<div class="menu_cih">Шығу</div>
-							</a>
-						</div>
 					</div>
-				<? endif ?>
+					<div class="menu_c">
+						<div class="menu_ci user_edit_pop">
+							<div class="menu_cin"><i class="fal fa-user"></i></div>
+							<div class="menu_cih">Менің аккаунтым</div>
+						</div>
+						<div class="menu_ci user_ph_pop">
+							<div class="menu_cin"><i class="fal fa-mobile"></i></div>
+							<div class="menu_cih">Телефон номерім</div>
+						</div>
+						<div class="menu_ci company_edit_pop">
+							<div class="menu_cin"><i class="fal fa-cog"></i></div>
+							<div class="menu_cih">Бағдарлама баптауы</div>
+						</div>
+						<a class="menu_ci" href="/admin/exit.php">
+							<div class="menu_cin"><i class="fal fa-sign-out"></i></div>
+							<div class="menu_cih">Шығу</div>
+						</a>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="utop">
@@ -56,7 +54,7 @@
 				<? else: ?>
 					<a class="utop_nm utop_nm2 logo" href="/admin/catalog/">
 						<div class="logo_l lazy_img" data-src="/assets/img/logo/logo.png"></div>
-						<div class="logo_r"><?=$site['name']?></div>
+						<div class="logo_r">Admin panel</div>
 					</a>
 				<? endif ?>
 				<? if (@$site_set['utopu']): ?>

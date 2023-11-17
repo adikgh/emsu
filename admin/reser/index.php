@@ -3,8 +3,13 @@
 	// Қолданушыны тексеру
 	if (!$user_id) header('location: /admin/');
 
-	// cours 
-	$reser = db::query("select * from reser ORDER BY id asc");
+	// 
+	if ($user['super_rights']) {
+		$reser = db::query("select * from reser ORDER BY id asc");
+	} else {
+		$reser = db::query("select * from reser where manager_id = '$user_id' ORDER BY id asc");
+	}
+
 
 	// Сайттың баптаулары
 	$menu_name = 'reser';
