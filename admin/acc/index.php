@@ -7,12 +7,12 @@
 	$menu_name = 'user';
 	$site_set['footer'] = false;
 	$site_set['utop'] = 'Жеке деректер';
-	$site_set['utop_bk'] = '/cours';
+	$site_set['utop_bk'] = '/';
 	$site_set['utopu'] = false;
 	$css = ['admin/user'];
 	$js = ['admin/user'];
 ?>
-<? include "../../block/header.php"; ?>
+<? include "../block/header.php"; ?>
 
 
 	<div class="up">
@@ -42,7 +42,7 @@
 					<div class="menu_cin"><i class="fal fa-mobile"></i></div>
 					<div class="menu_cih">Телефон номерім</div>
 				</div>
-				<? if ($user_right): ?>
+				<? if (@$user_right): ?>
 					<div class="up_li company_edit_pop">
 						<div class="menu_cin"><i class="fal fa-cog"></i></div>
 						<div class="menu_cih">Бағдарлама баптауы</div>
@@ -87,7 +87,7 @@
 			</div>
 
 			<div class="up_exit">
-				<a class="btn btn_red_cl" href="/user/exit.php">
+				<a class="btn btn_red_cl" href="/admin/exit.php">
 					<i class="far fa-sign-out"></i>
 					<span>Шығу</span>
 				</a>
@@ -107,4 +107,4 @@
 		</div>
 	</div>
 
-<? include "../../block/footer.php"; ?>
+<? include "../block/footer.php"; ?>

@@ -2,7 +2,7 @@
 		</div>
 	</div>
 
-	<? if ($site_set['footer'] == true): ?>
+	<? if ($site_set['footer']): ?>
 		<!-- start footer -->
 		<footer class="footer">
 			<div class="bl_c">

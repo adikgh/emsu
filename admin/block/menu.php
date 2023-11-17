@@ -71,6 +71,35 @@
 	</div>
 <? endif ?>
 
+<? // if ($user_right && @$site_set['menu_mb']): ?>
+   <div class="pmenu">
+      <div class="pmenu_c">
+			<div class="pmenu_cm">
+				<a class="pmenu_i <?=($menu_name=='list'?'pmenu_i_act':'')?>" href="/admin/catalog/">
+					<i class="far fa-hotel"></i>
+					<span>шипажай</span>
+				</a>
+				<a class="pmenu_i <?=($menu_name=='reser'?'pmenu_i_act':'')?>" href="/admin/reser/">
+					<i class="far fa-users"></i>
+					<span>брон</span>
+				</a>
+				<div class="pmenu_i pmenu_ibtn">
+					<i class="far fa-plus"></i>
+				</div>
+				<a class="pmenu_i <?=($menu_name=='users'?'pmenu_i_act':'')?>" href="#/admin/users/">
+					<i class="far fa-users-class"></i>
+					<span>user</span>
+				</a>
+				<a class="pmenu_i <?=($menu_name=='acc'?'pmenu_i_act':'')?>" href="/admin/acc/">
+					<i class="far fa-user"></i>
+					<span>профиль</span>
+					<!-- <span><?=$user['name']?> <?=($user['surname']?substr($user['surname'],0,1).'.':'')?></span> -->
+				</a>
+			</div>
+      </div>
+   </div>
+<? // endif ?>
+
 <!-- body start -->
 <div class="app">
 	<div class="ub1">
