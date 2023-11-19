@@ -3,12 +3,78 @@
 	// Қолданушыны тексеру
 	if (!$user_id) header('location: /admin/');
 
-	// 
-	if ($user['super_rights']) {
-		$reser = db::query("select * from reser ORDER BY id asc");
+
+	// `reser_dt` >= '2023-09-01' and `reser_dt` <= '2023-09-30'
+
+	$date_nj = 'Барлығы';
+	$date_nt = 'Барлығы';
+	if (@$_GET['dt'] == '09') {
+		if ($user['super_rights']) {
+			$reser = db::query("select * from reser where reser_dt >= '2023-09-01' and reser_dt <= '2023-09-30' ORDER BY reser_dt asc");
+			$rash = mysqli_fetch_assoc(db::query("select sum(many_dt * of_number * room_rate), sum((many_dt * of_number * room_rate) * (percent / 100)), sum(room_rate), sum(prepayment), avg(percent) from reser where reser_dt >= '2023-09-01' and reser_dt <= '2023-09-30' ORDER BY reser_dt asc"));
+		} else {
+			$reser = db::query("select * from reser where manager_id = '$user_id' and reser_dt >= '2023-09-01' and reser_dt <= '2023-09-30' ORDER BY reser_dt asc");
+			$rash = mysqli_fetch_assoc(db::query("select sum(many_dt * of_number * room_rate), sum((many_dt * of_number * room_rate) * (percent / 100)), sum(room_rate), sum(prepayment) from reser where manager_id = '$user_id' and reser_dt >= '2023-09-01' and reser_dt <= '2023-09-30' ORDER BY reser_dt asc"));
+		}
+		$date_nj = 'Қыркүйек';
+	} else if (@$_GET['dt'] == '10') {
+		if ($user['super_rights']) {
+			$reser = db::query("select * from reser where reser_dt >= '2023-10-01' and reser_dt <= '2023-10-31' ORDER BY reser_dt asc");
+			$rash = mysqli_fetch_assoc(db::query("select sum(many_dt * of_number * room_rate), sum((many_dt * of_number * room_rate) * (percent / 100)), sum(room_rate), sum(prepayment), avg(percent) from reser where reser_dt >= '2023-10-01' and reser_dt <= '2023-10-31' ORDER BY reser_dt asc"));
+		} else {
+			$reser = db::query("select * from reser where manager_id = '$user_id' and reser_dt >= '2023-10-01' and reser_dt <= '2023-10-31' ORDER BY reser_dt asc");
+			$rash = mysqli_fetch_assoc(db::query("select sum(many_dt * of_number * room_rate), sum((many_dt * of_number * room_rate) * (percent / 100)), sum(room_rate), sum(prepayment) from reser where manager_id = '$user_id' and reser_dt >= '2023-10-01' and reser_dt <= '2023-10-31' ORDER BY reser_dt asc"));
+		}
+		$date_nj = 'Қазан';
+	} else if (@$_GET['dt'] == '11') {
+		if ($user['super_rights']) {
+			$reser = db::query("select * from reser where reser_dt >= '2023-11-01' and reser_dt <= '2023-11-30' ORDER BY reser_dt asc");
+			$rash = mysqli_fetch_assoc(db::query("select sum(many_dt * of_number * room_rate), sum((many_dt * of_number * room_rate) * (percent / 100)), sum(room_rate), sum(prepayment), avg(percent) from reser where reser_dt >= '2023-11-01' and reser_dt <= '2023-11-30' ORDER BY reser_dt asc"));
+		} else {
+			$reser = db::query("select * from reser where manager_id = '$user_id' and reser_dt >= '2023-11-01' and reser_dt <= '2023-11-30' ORDER BY reser_dt asc");
+			$rash = mysqli_fetch_assoc(db::query("select sum(many_dt * of_number * room_rate), sum((many_dt * of_number * room_rate) * (percent / 100)), sum(room_rate), sum(prepayment) from reser where manager_id = '$user_id' and reser_dt >= '2023-11-01' and reser_dt <= '2023-11-30' ORDER BY reser_dt asc"));
+		}
+		$date_nj = 'Қараша';
+
+
+	} else if (@$_GET['arrival_dt'] == '09') {
+		if ($user['super_rights']) {
+			$reser = db::query("select * from reser where arrival_dt >= '2023-09-01' and arrival_dt <= '2023-09-30' ORDER BY arrival_dt asc");
+			$rash = mysqli_fetch_assoc(db::query("select sum(many_dt * of_number * room_rate), sum((many_dt * of_number * room_rate) * (percent / 100)), sum(room_rate), sum(prepayment), avg(percent) from reser where arrival_dt >= '2023-09-01' and arrival_dt <= '2023-09-30' ORDER BY arrival_dt asc"));
+		} else {
+			$reser = db::query("select * from reser where manager_id = '$user_id' and arrival_dt >= '2023-09-01' and arrival_dt <= '2023-09-30' ORDER BY arrival_dt asc");
+			$rash = mysqli_fetch_assoc(db::query("select sum(many_dt * of_number * room_rate), sum((many_dt * of_number * room_rate) * (percent / 100)), sum(room_rate), sum(prepayment) from reser where manager_id = '$user_id' and arrival_dt >= '2023-09-01' and arrival_dt <= '2023-09-30' ORDER BY arrival_dt asc"));
+		}
+		$date_nt = 'Қыркүйек';
+	} else if (@$_GET['arrival_dt'] == '10') {
+		if ($user['super_rights']) {
+			$reser = db::query("select * from reser where arrival_dt >= '2023-10-01' and arrival_dt <= '2023-10-31' ORDER BY arrival_dt asc");
+			$rash = mysqli_fetch_assoc(db::query("select sum(many_dt * of_number * room_rate), sum((many_dt * of_number * room_rate) * (percent / 100)), sum(room_rate), sum(prepayment), avg(percent) from reser where arrival_dt >= '2023-10-01' and arrival_dt <= '2023-10-31' ORDER BY arrival_dt asc"));
+		} else {
+			$reser = db::query("select * from reser where manager_id = '$user_id' and arrival_dt >= '2023-10-01' and arrival_dt <= '2023-10-31' ORDER BY arrival_dt asc");
+			$rash = mysqli_fetch_assoc(db::query("select sum(many_dt * of_number * room_rate), sum((many_dt * of_number * room_rate) * (percent / 100)), sum(room_rate), sum(prepayment) from reser where manager_id = '$user_id' and arrival_dt >= '2023-10-01' and arrival_dt <= '2023-10-31' ORDER BY arrival_dt asc"));
+		}
+		$date_nt = 'Қазан';
+	} else if (@$_GET['arrival_dt'] == '11') {
+		if ($user['super_rights']) {
+			$reser = db::query("select * from reser where arrival_dt >= '2023-11-01' and arrival_dt <= '2023-11-30' ORDER BY arrival_dt asc");
+			$rash = mysqli_fetch_assoc(db::query("select sum(many_dt * of_number * room_rate), sum((many_dt * of_number * room_rate) * (percent / 100)), sum(room_rate), sum(prepayment), avg(percent) from reser where arrival_dt >= '2023-11-01' and arrival_dt <= '2023-11-30' ORDER BY arrival_dt asc"));
+		} else {
+			$reser = db::query("select * from reser where manager_id = '$user_id' and arrival_dt >= '2023-11-01' and arrival_dt <= '2023-11-30' ORDER BY arrival_dt asc");
+			$rash = mysqli_fetch_assoc(db::query("select sum(many_dt * of_number * room_rate), sum((many_dt * of_number * room_rate) * (percent / 100)), sum(room_rate), sum(prepayment) from reser where manager_id = '$user_id' and arrival_dt >= '2023-11-01' and arrival_dt <= '2023-11-30' ORDER BY arrival_dt asc"));
+		}
+		$date_nt = 'Қараша';
 	} else {
-		$reser = db::query("select * from reser where manager_id = '$user_id' ORDER BY id asc");
+		if ($user['super_rights']) {
+			$reser = db::query("select * from reser ORDER BY id asc");
+			$rash = mysqli_fetch_assoc(db::query("select sum(many_dt * of_number * room_rate), sum((many_dt * of_number * room_rate) * (percent / 100)), sum(room_rate), sum(prepayment), avg(percent) from reser ORDER BY id asc"));
+		} else {
+			$reser = db::query("select * from reser where manager_id = '$user_id' ORDER BY id asc");
+			$rash = mysqli_fetch_assoc(db::query("select sum(many_dt * of_number * room_rate), sum((many_dt * of_number * room_rate) * (percent / 100)), sum(room_rate), sum(prepayment) from reser where manager_id = '$user_id' ORDER BY id asc"));
+		}
 	}
+
+
 
 
 	// Сайттың баптаулары
@@ -22,17 +88,62 @@
 
 		<div class="head_c">
 			<h4>Брондар</h4>
+			<p><? //var_dump($rash) ?></p>
 		</div>
 
 		<div class="">
-			<div class="qpanel">
-				<div class="">
-					<div class="btn reser_add_pop">
-						<i class="fal fa-plus"></i>
-						<span>Қосу</span>
+			<div class="qpanel ucours_t">
+				<div class="ucours_tl">
+					<div class="ucours_tm">
+						<div class="btn reser_add_pop">
+							<i class="fal fa-plus"></i>
+							<span>Қосу</span>
+						</div>
+					</div>
+					<div class="ucours_tm">
+						<!-- <div class="ucours_tmas"></div> -->
+						<div class="ucours_tmi ucours_tm_act">
+							<span>Брон: <?=$date_nj?></span>
+							<i class="fal fa-angle-down ucours_tmis"></i>
+						</div>
+						<div class="menu_c ucours_tma">
+							<a class="menu_ci" href="?">
+								<div class="menu_cih">Барлығы</div>
+							</a>
+							<a class="menu_ci" href="?dt=09">
+								<div class="menu_cih">Қыркүйек</div>
+							</a>
+							<a class="menu_ci" href="?dt=10">
+								<div class="menu_cih">Қазан</div>
+							</a>
+							<a class="menu_ci" href="?dt=11">
+								<div class="menu_cih">Қараша</div>
+							</a>
+						</div>
+					</div>
+					<div class="ucours_tm">
+						<!-- <div class="ucours_tmas"></div> -->
+						<div class="ucours_tmi ucours_tm_act">
+							<span>Келетін күні: <?=$date_nt?></span>
+							<i class="fal fa-angle-down ucours_tmis"></i>
+						</div>
+						<div class="menu_c ucours_tma">
+							<a class="menu_ci" href="?">
+								<div class="menu_cih">Барлығы</div>
+							</a>
+							<a class="menu_ci" href="?arrival_dt=09">
+								<div class="menu_cih">Қыркүйек</div>
+							</a>
+							<a class="menu_ci" href="?arrival_dt=10">
+								<div class="menu_cih">Қазан</div>
+							</a>
+							<a class="menu_ci" href="?arrival_dt=11">
+								<div class="menu_cih">Қараша</div>
+							</a>
+						</div>
 					</div>
 				</div>
-				<div class="">
+				<!-- <div class="">
 					<div class=""></div>
 					<div class="ucours_tr">
 						<div class="ucours_trn">Страница: 1/2</div>
@@ -41,7 +152,7 @@
 							<a class="ucours_trnci " href="?&page=2"><i class="fal fa-angle-right"></i></a>
 						</div>
 					</div>
-				</div>
+				</div> -->
 			</div>
 
 			<div class="qtable">
@@ -73,6 +184,40 @@
 								<th class="qtable_mn140 txt_c">Бонус (10%)</th>
 							<? endif ?>
 							<th class="qtable_mn140 txt_c">Брон жасалған күні</th>
+							<!-- <th></th> -->
+							<!-- <th></th> -->
+						</tr>
+						<tr class="qtable_all">
+							<!-- <th class="txt_c qtable_n"></th> -->
+							<!-- <th class="txt_c qtable_n"></th> -->
+							<th class="" colspan="9">Жалпы</th>	
+							<th class="qtable_mn140 txt_r">
+								<div class="fr_price"><?=$rash['sum(room_rate)']?></div>
+							</th>
+							<th class="qtable_mn140 txt_r">
+								<div class="fr_price"><?=$rash['sum(prepayment)']?></div>
+							</th>
+							<th class="qtable_mn140 txt_r">
+								<div class="fr_price"><?=($rash['sum(many_dt * of_number * room_rate)'])?></div>
+							</th>
+							<? if ($user['super_rights']): ?>
+								<th class="qtable_mn140 txt_r">
+									<div class="fr_price"><?=($rash['sum(many_dt * of_number * room_rate)'] - $rash['sum(prepayment)'])?></div>
+								</th>
+								<th class="qtable_mn140 txt_c"><?=intval($rash['avg(percent)'])?>%</th>
+								<th class="qtable_mn140 txt_r">
+									<div class="fr_price"><?=intval($rash['sum((many_dt * of_number * room_rate) * (percent / 100))'])?></div>
+								</th>
+								<th class="qtable_mn140 txt_c"></th>
+							<? else: ?>
+								<th class="qtable_mn140 txt_r">
+									<div class="fr_price"><?=intval($rash['sum((many_dt * of_number * room_rate) * (percent / 100))'])?></div>
+								</th>
+								<th class="qtable_mn140 txt_r">
+									<div class="fr_price"><?=(intval($rash['sum((many_dt * of_number * room_rate) * (percent / 100))'])) * 0.1?></div>
+								</th>
+							<? endif ?>
+							<th class="qtable_mn140 txt_c"></th>
 							<!-- <th></th> -->
 							<!-- <th></th> -->
 						</tr>

@@ -53,7 +53,7 @@
 }
 .bl1_offer h1, .bl1_offer2 h1{font-size:52px;font-weight:800}
 @media(max-width:768px){.bl1_offer h1{font-size:42px}}
-@media(max-width:480px){.bl1_offer h1{font-size:26px}}
+@media(max-width:500px){.bl1_offer h1{font-size:26px}}
 @media(max-width:375px){.bl1_offer h1{font-size:24px}}
 @media(max-width:360px){.bl1_offer h1{font-size:22px}}
 @media(max-width:320px){.bl1_offer h1{font-size:20px}}
@@ -66,11 +66,11 @@
 	margin-top: 45px;
 	color: var(--wh);
 }
-@media(max-width:480px){.bl1_disc{margin-top:30px}}
+@media(max-width:500px){.bl1_disc{margin-top:30px}}
 
 .bl1_disc p{font-size:26px;font-weight:500}
 @media(max-width:768px){.bl1_disc p{font-size:20px}}
-@media(max-width:480px){.bl1_disc p{font-size:14px}}
+@media(max-width:500px){.bl1_disc p{font-size:14px}}
 @media(max-width:375px){.bl1_disc p{font-size:13px}}
 @media(max-width:320px){.bl1_disc p{font-size:12px}}
 
@@ -81,7 +81,7 @@
 	width: 100%;
 	margin-top: 45px;
 }
-@media(max-width:480px){.bl1_btn{padding-bottom:60px;margin-top:30px}}
+@media(max-width:500px){.bl1_btn{padding-bottom:60px;margin-top:30px}}
 
 .bl1_btn_a{
 	position: absolute;
@@ -95,7 +95,7 @@
 	text-align: left;
 	text-transform: underline;
 }
-@media(max-width:480px){.bl1_btn_a{font-size:12px}}
+@media(max-width:500px){.bl1_btn_a{font-size:12px}}
 
 .bl1_btn_ab{
 	position: absolute;
@@ -152,7 +152,7 @@
 	transition: var(--tm);
 }
 .bl1_si:hover{color:var(--cl)}
-@media(max-width:480px){.bl1_si{font-size:20px}}
+@media(max-width:500px){.bl1_si{font-size:20px}}
 
 
 
@@ -190,7 +190,7 @@
 	flex-direction: column;
 }
 @media(max-width:768px){.bl7_i{width:100%;margin-bottom:30px}}
-@media(max-width:480px){.bl7_i{padding:30px 20px;margin-bottom:20px}}
+@media(max-width:500px){.bl7_i{padding:30px 20px;margin-bottom:20px}}
 @media(max-width:375px){.bl7_i{padding:30px 15px;margin-bottom:15px}}
 
 .bl7_img{
@@ -221,7 +221,7 @@
 }
 @media(max-width:768px){.bl7_b{margin-top:0}}
 @media(max-width:768px){.bl7_b{flex-direction:column}}
-@media(max-width:480px){.bl7_b{padding:30px 20px}}
+@media(max-width:500px){.bl7_b{padding:30px 20px}}
 @media(max-width:375px){.bl7_b{padding:30px 15px}}
 
 .bl7_b p{}
@@ -260,7 +260,7 @@
 	overflow: hidden;
 }
 @media(max-width:768px){.bl2_i{width:100%}}
-@media(max-width:480px){.bl2_i{padding:30px;text-align:center}}
+@media(max-width:500px){.bl2_i{padding:30px;text-align:center}}
 @media(max-width:320px){.bl2_i{padding:30px 15px;margin-bottom:15px}}
 
 .bl2_img{
@@ -271,7 +271,7 @@
 	background-position: center center;
 	background-repeat: no-repeat;
 }
-@media(max-width:480px){.bl2_img{margin:auto}}
+@media(max-width:500px){.bl2_img{margin:auto}}
 
 .bl2_l{
 	position: relative;
@@ -310,7 +310,7 @@
 	right: -230px;
 	opacity: 0;
 }
-@media(max-width:480px){.bl_raz::before{opacity:1}}
+@media(max-width:500px){.bl_raz::before{opacity:1}}
 
 
 
@@ -382,7 +382,7 @@
 	text-align: center;
 }
 @media(max-width:768px){.bl8_rsi{width:100%;margin-bottom:30px}}
-@media(max-width:480px){.bl8_rsi{padding:30px 20px}}
+@media(max-width:500px){.bl8_rsi{padding:30px 20px}}
 @media(max-width:375px){.bl8_rsi{padding:30px 15px}}
 @media(max-width:360px){.bl8_rsi{padding:20px 15px}}
 @media(max-width:320px){.bl8_rsi{padding:15px}}
@@ -399,7 +399,7 @@
 	margin-top: 60px;
 }
 @media(max-width:768px){.bl8_c{margin-top:0}}
-@media(max-width:480px){.bl8_c{padding:30px 20px}}
+@media(max-width:500px){.bl8_c{padding:30px 20px}}
 @media(max-width:375px){.bl8_c{padding:30px 15px}}
 @media(max-width:360px){.bl8_c{padding:20px 15px}}
 @media(max-width:320px){.bl8_c{padding:15px}}
@@ -409,7 +409,7 @@
 	padding-top: 10px;
 	text-align: center;
 }
-@media(max-width:480px){.bl8_c .head_c{padding-top:0}}
+@media(max-width:500px){.bl8_c .head_c{padding-top:0}}
 
 .bl8_l{position:relative;width:100%}
 
@@ -428,7 +428,7 @@
 	flex-wrap: wrap;
 }
 @media(max-width:768px){.bl8_b{margin-top:30px}}
-@media(max-width:480px){.bl8_b{padding:30px 20px}}
+@media(max-width:500px){.bl8_b{padding:30px 20px}}
 @media(max-width:375px){.bl8_b{padding:30px 15px}}
 @media(max-width:360px){.bl8_b{padding:20px 15px}}
 @media(max-width:320px){.bl8_b{padding:15px}}
@@ -532,13 +532,13 @@
 
 .bl13_ri{
 	width: 100%;
-	max-width: 480px;
+	max-width: 500px;
 	height: 320px;
 	background-size: auto 100%;
 	background-position: center center;
 	background-repeat: no-repeat;	
 }
-@media(max-width:480px){.bl13_ri{height:240px}}
+@media(max-width:500px){.bl13_ri{height:240px}}
 @media(max-width:375px){.bl13_ri{height:200px}}
 
 
@@ -679,7 +679,7 @@
 	margin:auto;
 }
 
-.bl3_c{height:480px}
+.bl3_c{height:500px}
 @media(max-width:768px){.bl3_c{height:320px}}
 
 .bl3_i{
@@ -692,7 +692,7 @@
 	border-radius: 30px;
 	overflow: hidden;
 }
-@media(max-width:480px){.bl3_i{width:calc(100% - 30px) !important;margin:0 15px}}
+@media(max-width:500px){.bl3_i{width:calc(100% - 30px) !important;margin:0 15px}}
 
 
 .bl3_img{
@@ -729,7 +729,7 @@
 	align-items: flex-start;
 }
 @media(max-width:768px){.bl3_ic{align-items:flex-end}}
-@media(max-width:480px){.bl3_ic{padding:30px}}
+@media(max-width:500px){.bl3_ic{padding:30px}}
 
 .bl3_ich{
 	position: relative;
@@ -814,7 +814,7 @@
 	box-shadow: var(--bx05);
 	transition: var(--tm);
 }
-@media(max-width:480px){.bl4_con{padding:30px 20px;padding-top:10px}}
+@media(max-width:500px){.bl4_con{padding:30px 20px;padding-top:10px}}
 @media(max-width:375px){.bl4_con{padding:20px 15px;padding-top:0}}
 
 
@@ -825,7 +825,7 @@
 .bl4_pag{
 	position: relative;
 	width: 100%;
-	max-width: 480px;
+	max-width: 500px;
 	margin: auto;
 	margin-bottom: 60px;
 	border-radius: 7px !important;
@@ -902,7 +902,7 @@
 	padding-bottom: 60px;
 }
 .bl5 .head_c{padding-top:60px}
-@media(max-width:480px){.bl5 .head_c{padding-top: 30px}}
+@media(max-width:500px){.bl5 .head_c{padding-top: 30px}}
 
 
 .bl5_c{
@@ -936,7 +936,7 @@
 .bl5_i:nth-child(3n){margin-right:0}
 @media(max-width:1024px){.bl5_i{width:calc(50% - 15px);margin-right:0}}
 @media(max-width:768px){.bl5_i{height:280px}}
-@media(max-width:480px){.bl5_i{width:100%;margin-bottom:20px}}
+@media(max-width:500px){.bl5_i{width:100%;margin-bottom:20px}}
 @media(max-width:375px){.bl5_i{height:240px;margin-bottom:15px}}
 @media(max-width:320px){.bl5_i{height:200px}}
 
@@ -1212,7 +1212,7 @@
 	border: 1px solid var(--bl1);
 }
 @media(max-width:1024px){.bl9_i{width:100%}}
-@media(max-width:480px){.bl9_i{padding:30px}}
+@media(max-width:500px){.bl9_i{padding:30px}}
 @media(max-width:320px){.bl9_i{padding:30px 15px}}
 
 .bl9_it{margin-top:30px}
@@ -1272,12 +1272,12 @@
 	justify-content: flex-end;
 	align-items: flex-start;
 }
-@media(max-width:480px){.bl9_ildt{padding-top:10px;width:74px;justify-content:center}}
+@media(max-width:500px){.bl9_ildt{padding-top:10px;width:74px;justify-content:center}}
 .bl9_ildt i{
 	font-size: 13.4px;
 	color: var(--cl);
 }
-@media(max-width:480px){.bl9_ildt i{font-size:11px}}
+@media(max-width:500px){.bl9_ildt i{font-size:11px}}
 
 
 
@@ -1427,7 +1427,7 @@
 	width: 100%;
 	padding: 30px 45px;
 }
-@media(max-width:480px){.faq-heading{padding:30px 20px;padding-right:35px}}
+@media(max-width:500px){.faq-heading{padding:30px 20px;padding-right:35px}}
 @media(max-width:375px){.faq-heading{padding:30px 15px}}
 
 
@@ -1467,7 +1467,7 @@
 	padding-bottom: 30px;
 	color: var(--bl);
 }
-@media(max-width:480px){.faq-text{padding:0 20px}}
+@media(max-width:500px){.faq-text{padding:0 20px}}
 @media(max-width:375px){.faq-text{padding:0 15px}}
 
 
@@ -1538,7 +1538,7 @@
 	background: var(--wh2);
 	box-shadow: var(--bx4);
 }
-@media(max-width:480px){.bl10_c{padding:30px}}
+@media(max-width:500px){.bl10_c{padding:30px}}
 @media(max-width:320px){.bl10_c{width:calc(100% - 30px);padding:30px 15px}}
 
 .bl10_c::before {
@@ -1568,7 +1568,7 @@
 @media(max-width:768px){.bl10_c .form_c{flex-direction:column}}
 .bl10_c .form_im{width:calc(50% - 15px)}
 @media(max-width:768px){.bl10_c .form_im{width:75%}}
-@media(max-width:480px){.bl10_c .form_im{width:100%}}
+@media(max-width:500px){.bl10_c .form_im{width:100%}}
 
 .bl10_c .form_im_txt{padding:0 15px 0 0;text-align:center}
 .bl10_c .form_c .form_im .btn{width:100%}
@@ -1610,4 +1610,4 @@
 	padding-top: 44px;
 }
 @media(max-width:768px){.blc1{padding-top:0}}
-@media(max-width:480px){.blc1 .head_c{padding-top:94px}}
+@media(max-width:500px){.blc1 .head_c{padding-top:94px}}

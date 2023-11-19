@@ -16,8 +16,8 @@
 	
 
 <!-- main css -->
-<? foreach ($ccss as $i): ?> <link rel="stylesheet" type="text/css" href="/assets/css/<?=$i?>.css?v=<?=$ver?>" /> <? endforeach ?>
-<? foreach ($css as $i): ?> <link rel="stylesheet" type="text/css" href="/assets/css/<?=$i?>.css?v=<?=$ver?>" /> <? endforeach ?>
+<? foreach ($ccss as $i): ?> <link rel="stylesheet" type="text/css" href="/assets/css/<?=$i?>.css?v=<?=$v?>" /> <? endforeach ?>
+<? foreach ($css as $i): ?> <link rel="stylesheet" type="text/css" href="/assets/css/<?=$i?>.css?v=<?=$v?>" /> <? endforeach ?>
 
 
 <!-- js -->
@@ -25,14 +25,14 @@
 <script src="/assets/pl/jquery.lazy.min.js"></script>
 <script src="/assets/pl/jquery.lazy.plugins.min.js"></script>
 <script src="/assets/pl/jquery.mask.min.js"></script>
-<script src="/assets/js/fun.js?v=<?=$ver?>"></script>
+<script src="/assets/js/fun.js?v=<?=$v?>"></script>
 <? if (@$site_set['prefixfree']): ?> <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.6/prefixfree.min.js"></script> <? endif ?>
 <? if (@$site_set['swiper']): ?> <script src="/assets/pl/swiper-bundle.min.js"></script> <? endif ?>
 <? if (@$site_set['plyr']): ?> <script src="/assets/pl/plyr.polyfilled.js"></script> <? endif ?>
 <? if (@$site_set['aos']): ?> <script src="/assets/pl/aos.js"></script> <? endif ?>
 <? if (@$site_set['autosize']): ?> <script src="/assets/pl/autosize.min.js"></script> <? endif ?>
 <? if (@$site_set['bootstrap']): ?> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> <? endif ?>
-<? foreach ($cjs as $i): ?> <script src="/assets/js/<?=$i?>.js?v=<?=$ver?>"></script> <? endforeach ?>
+<? foreach ($cjs as $i): ?> <script src="/assets/js/<?=$i?>.js?v=<?=$v?>"></script> <? endforeach ?>
 
 
 <? if ($site['metrika']): ?>

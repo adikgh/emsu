@@ -26,9 +26,9 @@
 	<? endif ?>
 
 	<!-- main js -->
-	<script src="/assets/js/admin/norm.js?v=<?=$ver?>"></script>
-	<!-- <script src="/assets/js/main.js?v=<?=$ver?>"></script> -->
-	<? foreach ($js as $i): ?> <script src="/assets/js/<?=$i?>.js?v=<?=$ver?>"></script> <? endforeach ?>
+	<script src="/assets/js/admin/norm.js?v=<?=$v?>"></script>
+	<!-- <script src="/assets/js/main.js?v=<?=$v?>"></script> -->
+	<? foreach ($js as $i): ?> <script src="/assets/js/<?=$i?>.js?v=<?=$v?>"></script> <? endforeach ?>
 		
 </body>
 </html>

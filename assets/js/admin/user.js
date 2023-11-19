@@ -693,4 +693,41 @@ $(document).ready(function() {
 
 
 
+
+
+
+
+		// 
+		$('html').on('click', '.uc_uibo', function() {
+			if ($(this).parent().hasClass("uc_uibs_act")	!= true) {
+				$('.uc_uibo').parent().removeClass("uc_uibs_act");
+				$(this).parent().addClass("uc_uibs_act");
+			} else $('.uc_uibo').parent().removeClass("uc_uibs_act");
+		})
+	
+		// 
+		$('html').on('click', '.ucours_tmi', function() {
+			if ($(this).parent().hasClass("ucours_tm_act")	!= true) {
+				$('.ucours_tmi').parent().removeClass("ucours_tm_act");
+				$(this).parent().addClass("ucours_tm_act");
+			} else $('.ucours_tmi').parent().removeClass("ucours_tm_act");
+		})
+		$('html').on('click', '.ucours_tmas', function() {
+			$('.ucours_tmi').parent().removeClass("ucours_tm_act");
+		})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }) // end jquery

@@ -1831,6 +1831,7 @@ input:focus + .form_icon, input:hover + .form_icon{color:var(--cl)}
 	/* .footer{display:none} */
 }
 
+
 .footer_b{
 	position: relative;
 	width: 100%;
@@ -2002,7 +2003,7 @@ input:focus + .form_icon, input:hover + .form_icon{color:var(--cl)}
 
 
 
-
+/*  */
 .md_logc .modal_con{
 	max-width: 600px;
 }

@@ -11,6 +11,100 @@
     margin-bottom: 30px;
 }
 
+.ucours_t{
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 11;
+}
+.ucours_tl{
+    position: relative;
+    margin-right: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.ucours_tm{
+    position: relative;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.ucours_tmas{
+    position: absolute;
+    z-index: 1;
+    width: 300vw;
+    height: 300vh;
+    top: -100vh;
+    left: -100vw;
+    visibility: hidden;
+    cursor: auto;
+}
+.ucours_tm_act .ucours_tmas{
+    visibility: visible;
+}
+ 
+.ucours_tmi{
+    position: relative;
+    width: auto;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0 32px;
+    border-radius: 44px;
+    font-size: 14px;
+    background: var(--tr);
+    border: 1px solid var(--bl);
+    transition: .3s;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 2;
+}
+.ucours_tmi:hover{}
+.ucours_tm:last-child, .ucours_tmb{margin-right:0}
+.ucours_tmb{margin-left:5px}
+.ucours_tm_act{}
+ 
+ .ucours_tmic{
+     font-size: 12px;
+     margin: 0 10px 0 -5px;
+ }
+ .ucours_tmis{
+     font-size: 12px;
+     margin: 3px -5px 0 12px;
+ }
+ .ucours_tmi span{}
+ 
+ .ucours_tma{
+     top: 64px;
+     right: -50px;
+     max-height: 380px;
+     overflow-y: auto;
+     z-index: 3;
+ }
+ .ucours_tm_act .ucours_tma{
+     visibility: visible;
+     opacity: 1;
+     right: 0;
+ }
+ .ucours_tma::-webkit-scrollbar{
+     width: 8px;
+     height: 8px;
+ }
+ .ucours_tma::-webkit-scrollbar-thumb{border:none}
+ 
+
+
+
+
+
+
+
+
+
 
 
 
@@ -85,8 +179,14 @@ table{
 tr{
 
 }
+.qtable_all{
+    background: var(--bl7);
+}
+.qtable_all th{
+    color: var(--wh);
+}
 /* tr:nth-child(even){background-color:#f2f2f2} */
-tr:hover {background-color:var(--gr3)}
+tbody tr:hover {background-color:var(--gr3)}
 
 td, th{
     border-left: 1px solid var(--gr3);

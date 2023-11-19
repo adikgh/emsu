@@ -6,7 +6,7 @@
 	if (isset($_SESSION['lang'])) $lang = $_SESSION['lang'];
 
 	// 
-	$ver = 10.332;
+	$v = 2.1;
 
     // 
 	$url = $_SERVER['REQUEST_URI'];

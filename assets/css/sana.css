@@ -116,7 +116,7 @@
 .sana_bl1{
 	position: relative;
 	width: 100%;
-	max-width: 1480px;
+	max-width: 1500px;
 	margin: auto;
 }
 .sana_bl1t{
@@ -148,9 +148,9 @@
 	background-position: center center;
 	background-repeat: no-repeat;
 }
-@media(max-width:1024px){.sana_bl1ti div{height:480px}}
+@media(max-width:1024px){.sana_bl1ti div{height:500px}}
 @media(max-width:768px){.sana_bl1ti div{height:420px;border-radius:0}}
-@media(max-width:480px){.sana_bl1ti div{height:360px}}
+@media(max-width:500px){.sana_bl1ti div{height:360px}}
 @media(max-width:375px){.sana_bl1ti div{height:300px}}
 @media(max-width:360px){.sana_bl1ti div{height:280px}}
 @media(max-width:320px){.sana_bl1ti div{height:260px}}
