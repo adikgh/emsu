@@ -1,5 +1,5 @@
 <div class="bl_c">
-	<div class="head_c txt_c"><h4 class="txt_tu">Выбрать номера</h4></div>
+	<div class="head_c"><h4 class="txt_tu">Выбрать номера</h4></div>
 	<div class="sana_bl2_c">
 		<?php
 			$sql = db::query("select * from `number` where sana_id = '$id' and arh is null ORDER BY type_id ASC");

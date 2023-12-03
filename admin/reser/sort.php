@@ -20,3 +20,41 @@
 							</a>
 						</div>
 					</div>
+
+
+
+
+
+
+
+
+
+
+
+
+					
+
+
+	<div class="qtable_btn reser_edti_pop"><i class="far fa-pen"></i></div>
+
+	<!-- reser edit -->
+	<div class="pop_bl pop_bl2 reser_edit_block">
+		<div class="pop_bl_a reser_edit_back"></div>
+		<div class="pop_bl_c">
+			<div class="head_c">
+				<h5>Бронды өзгерту</h5>
+				<div class="btn btn_dd2 reser_add_back"><i class="fal fa-times"></i></div>
+			</div>
+			<div class="pop_bl_cl">
+				<div class="form_c">
+					<div class="reser_edit_ng"></div>
+					<div class="form_im form_im_bn">
+						<div class="btn btn_reser_edit">
+							<i class="far fa-check"></i>
+							<span>Сақтау</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

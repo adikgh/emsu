@@ -10,10 +10,10 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 54px;
+	height: 64px;
 	z-index: 999;
 	background: var(--tr);
-	transition: var(--tm);
+	transition: .3s;
 	display: none;
 }
 @media(max-width:768px){.header_sana{display:block}}
@@ -21,6 +21,7 @@
 .header_sana_act{
 	background: var(--wh);
 	box-shadow: var(--bx05);
+	height: 54px;
 }
 
 
@@ -30,38 +31,59 @@
 	width: 100%;
 	height: 100%;
 	display: flex;
-	justify-content: flex-start;
+	justify-content: space-between;
 	align-items: center;
+	/* padding: 0 10px; */
 }
 .header_sana_back{
 	position: relative;
-	width: 54px;
-	height: 54px;
-	color: var(--wh);
-	transition: var(--tm);
+	width: 38px;
+	height: 38px;
+	border-radius: 38px;
+	/* color: var(--wh); */
+	background: var(--wh);
+	transition: .3s;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	font-size: 14px;
 }
 .header_sana_act .header_sana_back{color:var(--bl)}
 
-.header_share{
+
+.header_sana_r{
 	position: relative;
-	width: 54px;
-	height: 54px;
-	color: var(--wh);
-	transition: var(--tm);
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+.header_share, .header_heart{
+	position: relative;
+	width: 38px;
+	height: 38px;
+	border-radius: 38px;
+	/* color: var(--wh); */
+	background: var(--wh);
+	transition: .3s;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	transform: rotate(-90deg);
-	opacity: 0;
+	/* transform: rotate(-90deg); */
+	/* opacity: 0; */
+	font-size: 14px;
 }
-.header_sana_act .header_share{color:var(--bl);opacity:1}
+.header_heart{
+	margin-left: 10px;
+}
+.header_sana_act .header_share{
+	color: var(--bl);
+	opacity: 1;
+}
+
 
 .header_sana_n{
 	position: relative;
-	width: calc(100% - 54px - 54px);
+	width: calc(100% - 38px - 38px - 20px);
 	height: 100%;
 
 	display: flex;
@@ -97,6 +119,180 @@
 
 
 
+
+
+
+
+
+
+/*  */
+.sitem_tp{
+	position: relative;
+	width: 100%;
+	padding-bottom: 35%;
+	/* height: 50vh; */
+	/* background: var(--gr); */
+}
+@media (max-width: 500px) {
+	.sitem_tp{
+		padding-bottom: 70%;
+	}
+}
+
+
+
+.sitem_tp_bag{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	display: none;
+}
+.sitem_tp_bg{
+	position: absolute;
+	height: 100%;
+	left: 0;
+    right: 0;
+}
+.sitem_tp_bg .sitem_tp_bag{
+	display: block;
+	border-radius: 30px;
+}
+@media (max-width: 500px) {
+	.sitem_tp_bag{
+		display: block;
+	}
+	.sitem_tp_bg .sitem_tp_bag{
+		display: none;
+	}
+}
+
+
+
+
+
+
+
+
+
+.sitem_tp_img{
+	position: absolute;
+	width: 100%;
+	bottom: 35px;
+	left: 0;
+}
+@media (max-width: 425px) {
+	.sitem_tp_img{
+		bottom: 25px;
+	}	
+}
+@media (max-width: 375px) {
+	.sitem_tp_img{
+		bottom: 20px;
+	}	
+}
+
+.sitem_tp_imgc{
+	position: relative;
+	width: 100%;
+	border-radius: 12px;
+	background: var(--wh);
+	display: grid;
+	grid-template-columns: repeat(6, minmax(0, 1fr));
+	padding: 4px;
+	column-gap: 4px;
+    /* align-items: stretch; */
+}
+@media (max-width: 425px) {
+	.sitem_tp_imgc{
+
+	}	
+}
+
+.sitem_tp_imgc div{
+	position: relative;
+	width: 100%;
+	padding-bottom: 100%;
+	background: var(--gr);
+	border-radius: 10px;
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	overflow: hidden;
+}
+.sitem_tp_imgc div p{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 16px;
+	font-weight: 600;
+	color: var(--wh);
+	background: var(--bl3);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  */
+.blc1{
+	position: relative;
+	width: 100%;
+	padding-top: 44px;
+	bottom: 0;
+	padding-bottom: 60px;
+}
+.blc1 .head_c{
+	padding-bottom: 0;
+}
+@media(max-width:768px){.blc1{padding-top:0}}
+@media(max-width:500px){
+	.blc1 .head_c{padding-top:94px}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .sana_bl_c{
 	position: relative;
 	width: 100%;
@@ -124,7 +320,14 @@
 	width: 100%;
 	margin-top: -50px;
 }
-@media(max-width:768px){.sana_bl1t{margin-top:0}}
+@media(max-width:768px){
+	.sana_bl1{
+		display: none;
+	}
+	.sana_bl1t{
+		margin-top: 0;
+	}
+}
 
 
 

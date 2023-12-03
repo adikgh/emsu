@@ -33,6 +33,11 @@
 		</div>
 	</div>
 
+	
+	<!--  -->
+	<? include 'bl4.php'; ?>
+
+
 	<!--  -->
 	<div class="bl7" id="bl2">
 		<div class="bl_c">
@@ -65,218 +70,6 @@
 		</div>
 	</div>
 
-	<div class="bl4">
-		<div class="bl_c">
-			<form id="test1">
-				<div class="bl4_con">
-
-					<div class="head_c txt_c">
-						<h4><?=t::w('bl4_of')?></h4>
-						<p><?=t::w('bl4_p')?></p>
-					</div>
-
-					<div class="bl4_cls swiper-container">
-						<div class="gallery-pagination bl4_pag"></div>
-						<div class="swiper-wrapper">
-							<div class="swiper-slide">
-								<h5 class="bl4_v"><?=t::w('tv1')?></h5>
-								<div class="form_im form_imr">
-									<div class="form_imri">
-										<label class="radio" for="tv11">
-											<input type="radio" name="tv1" value="1" id="tv11" checked>
-											<span>1 <?=t::w('person')?></span>
-										</label>
-									</div>
-									<div class="form_imri">
-										<label class="radio" for="tv12">
-											<input type="radio" name="tv1" value="2" id="tv12">
-											<span>2 <?=t::w('person')?></span>
-										</label>
-									</div>
-									<div class="form_imri">
-										<label class="radio" for="tv13">
-											<input type="radio" name="tv1" value="3-4" id="tv13">
-											<span>3-4 <?=t::w('person')?></span>
-										</label>
-									</div>
-									<div class="form_imri">
-										<label class="radio" for="tv14">
-											<input type="radio" name="tv1" value="<?=t::w('more')?>" id="tv14">
-											<span><?=t::w('more')?></span>
-										</label>
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide">
-								<h5 class="bl4_v"><?=t::w('tv2')?></h5>
-								<div class="form_im form_imr">
-									<div class="form_imri">
-										<label class="radio" for="tv21">
-											<input type="radio" name="tv2" value="5" id="tv21" checked>
-											<span>5 <?=t::w('days')?></span>
-										</label>
-									</div>
-									<div class="form_imri">
-										<label class="radio" for="tv22">
-											<input type="radio" name="tv2" value="7" id="tv22">
-											<span>7 <?=t::w('days')?></span>
-										</label>
-									</div>
-									<div class="form_imri">
-										<label class="radio" for="tv23">
-											<input type="radio" name="tv2" value="10" id="tv23">
-											<span>10 <?=t::w('days')?></span>
-										</label>
-									</div>
-									<div class="form_imri">
-										<label class="radio" for="tv24">
-											<input type="radio" name="tv2" value="<?=t::w('more2')?>" id="tv24">
-											<span><?=t::w('more2')?></span>
-										</label>
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide">
-								<h5 class="bl4_v"><?=t::w('tv3')?></h5>
-								<div class="form_im form_imr">
-									<div class="form_imri">
-										<label class="radio" for="tv31">
-											<input type="radio" name="tv3" value="эконом" id="tv31" checked>
-											<span>Эконом</span>
-										</label>
-									</div>
-									<div class="form_imri">
-										<label class="radio" for="tv32">
-											<input type="radio" name="tv3" value="Стандарт" id="tv32">
-											<span>Стандарт</span>
-										</label>
-									</div>
-									<div class="form_imri">
-										<label class="radio" for="tv33">
-											<input type="radio" name="tv3" value="Комфорт" id="tv33">
-											<span>Комфорт</span>
-										</label>
-									</div>
-									<div class="form_imri">
-										<label class="radio" for="tv34">
-											<input type="radio" name="tv3" value="Люкс" id="tv34">
-											<span>Люкс</span>
-										</label>
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide">
-								<h5 class="bl4_v"><?=t::w('tv4')?></h5>
-								<div class="form_im"><input type="text" class="form_im_txt name" name="name" data-lenght="2" placeholder="<?=t::w('enter your name')?>" /></div>
-								<div class="form_im"><input type="tel" class="form_im_txt phone phone2 ms_phone" name="phone" data-lenght="11" placeholder="<?=t::w('enter the number')?>" /></div>
-							</div>
-						</div>
-						<div class="bl4_clb">
-							<div class="gallery-prev"><div class="btn btn_back"><i class="far fa-angle-left"></i><span><?=t::w('back')?></span></div></div>
-							<div class="gallery-next"><div class="btn btn_back"><span><?=t::w('farther')?></span><i class="far fa-angle-right"></i></div></div>
-							<div class="gallery-send"><div class="btn btn_back test1"><span><?=t::w('pick up')?></span><i class="far fa-angle-right"></i></div></div>
-						</div>
-					</div>
-				</div>
-			</form>
-		</div>
-	</div>
-
-	<!--  -->
-	<div class="bl2">
-		<div class="bl_c">
-			<div class="head_c txt_c">
-				<div class="head_v1">
-					<div class="head_vt"><?=t::w('bl2_of1')?></div>
-					<h3><?=t::w('bl2_of2')?></h3>
-				</div>
-			</div>
-			<div class="bl2_con">
-				<?php
-					$sql = db::query("select * from `blocks` where type = 'bl2' and lang = '$lang' ORDER BY number ASC");
-				while($ana = mysqli_fetch_array($sql)){
-					echo '			
-						<div class="bl2_i">
-								<div class="bl2_img lazy_bag" data-src="/assets/img/icons/'.$ana['img'].'"></div>
-								<h6 class="bl2_l">'.$ana['txt1'].'</h6>
-								<div class="bl_raz">'.$ana['txt2'].'</div>
-								<p class="bl2_r">'.$ana['txt3'].'</p>
-							</div>
-						';
-				}
-				?>
-			</div>
-			<div class="bl2_b">
-				<p><?=t::w('bl2_of3')?></p>
-				<a href="/catalog">
-					<div class="btn"><span><?=t::w('View the sanatorium')?></span><i class="far fa-long-arrow-right"></i></div>
-				</a>
-			</div>
-		</div>
-	</div>
-
-	<!-- bl8 / Наш опыт в цифрах -->
-
-	<div class="bl13">
-		<div class="swiper-container bl13_c">
-		<div class="swiper-wrapper">
-			<div class="swiper-slide">
-				<div class="bl_c">
-					<div class="bl131_c">
-							<div class="bl13_l">
-								<div class="head_c">
-									<h3><?=t::w('bl13_1o')?></h3>
-									<p><?=t::w('bl13_1p')?></p>
-								</div>
-								<div class="btn disb_zab2"><span><?=t::w('give')?></span></div>
-							</div>
-							<div class="bl13_r"><div class="bl13_ri lz_bl13" data-src="assets/img/bag/10шт..jpg"></div></div>
-						</div>
-				</div>
-			</div>
-			<div class="swiper-slide bl13_sw3">
-				<div class="bl_c">
-						<div class="head_c txt_c">
-							<div class="head_v1">
-								<div class="head_vt"><?=t::w('Our pride')?></div>
-								<h3><?=t::w('Mineral water')?></h3>
-							</div>
-						</div>
-					<div class="bl6_c">
-							<div class="bl6_r">
-								<div class="bl6_ls">
-									<?php
-										$sql = db::query("select * from `blocks` where type = 'bl6' and lang = '$lang' ORDER BY number ASC");
-									while($ana = mysqli_fetch_array($sql)){
-										echo '
-												<div class="bl6_lsi">
-													<div class="bl6_lsimg lz_bl13" data-src="/assets/img/icons/'.$ana['img'].'"></div>
-													<div class="bl6_lsin">'.$ana['txt1'].'</div>
-												</div>
-											';
-									}
-									?>
-								</div>
-							</div>
-							<div class="bl6_l"><div class="bl6_lc"><?=t::w('bl6_txt1')?></div></div>
-						</div>
-						<div class="bl6_btn">
-							<div class="bl6_btn2">
-								<div class="btn"><?=t::w('Get well')?></div>		
-							</div>
-						</div>
-				</div>
-			</div>
-			<!-- <div class="swiper-slide"><div class="bl_c"></div></div> -->
-		</div>
-		<div class="swiper-pagination bl13_pagination"></div>
-		<div class="swiper-button-next bl13_next"><div class="btn btn_sqr"><i class="fal fa-chevron-right"></i></div></div>
-		<div class="swiper-button-prev bl13_prev"><div class="btn btn_sqr"><i class="fal fa-chevron-left"></i></div></div>
-		</div>
-	</div>
-
-
-
 	<!--  -->
 	<div class="bl5">
 		<div class="bl_c">
@@ -287,26 +80,30 @@
 				</div>
 			</div>
 			<div class="bl5_c">
-				<?
-					$sql = db::query("select * from `sana` where sel is not null and number is not null ORDER BY `sana`.`number` ASC");
-					while($ana = mysqli_fetch_array($sql)){
-						echo '
-									<a href="/sana/?id='.$ana['id'].'" class="bl5_i">
-										<div class="bl5_ia lazy_bag" data-src="/assets/uploads/sanatorium/'.$ana['img'].'?v='.$v.'"></div>
-										<div class="bl5_ic">
-											<div class="bl5_ict">
-												<div class="bl5_icn">'.$ana['name'].'</div>
-												<div class="bl5_icts">'.@t::rank($ana['rank']).'</div>
-											</div>
-											<div class="bl5_icb">
-												<div class="bl5_icp">'.@t::w('from1').@t::p($ana['id']).' <i class="far fa-tenge"></i> '.@t::w('from2').'</div>
-												<div class="bl5_icbtn"><div class="btn btn_sqr"><i class="fal fa-long-arrow-right"></i></div></div>
-											</div>
-										</div>
-									</a>
-								';
-					}
-				?>
+				<? $sana = db::query("select * from `sana` where sel is not null and number is not null ORDER BY `sana`.`number` ASC"); ?>
+				<? while ($sana_d = mysqli_fetch_array($sana)): ?>
+					<a href="/sana/?id=<?=$sana_d['id']?>" class="bl5_i">
+						<div class="bl5_ia lazy_bag" data-src="/assets/uploads/sanatorium/<?=$sana_d['img'].'?v='.$v?>"></div>
+						<div class="bl5_ic">
+							<div class="bl5_ict">
+								<div class="bl5_icn"><?=$sana_d['name']?></div>
+								<div class="bl5_icts"><?=@t::rank($sana_d['rank'])?></div>
+							</div>
+							<div class="bl5_icb">
+								<div class="bl5_icp">
+									<?=@t::w('from1').@t::p($sana_d['id'])?>
+									<i class="far fa-tenge"></i>
+									<?=@t::w('from2')?>
+								</div>
+								<div class="bl5_icbtn">
+									<div class="btn btn_sqr">
+										<i class="fal fa-long-arrow-right"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+					</a>
+				<? endwhile ?>
 			</div>
 			<div class="bl5_b">
 				<p><?=t::w('bl5_of2')?></p>
@@ -315,104 +112,112 @@
 		</div>
 	</div>
 
+	<!-- bl2 / ДЛЯ КОГО НАШИ САНАТОРИЙ? -->
+
+	<!-- bl8 / Наш опыт в цифрах -->
+
+	<div class="bl13">
+		<div class="swiper-container bl13_c">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<div class="bl_c">
+						<div class="bl131_c">
+								<div class="bl13_l">
+									<div class="head_c">
+										<h3><?=t::w('bl13_1o')?></h3>
+										<p><?=t::w('bl13_1p')?></p>
+									</div>
+									<div class="btn disb_zab2"><span><?=t::w('give')?></span></div>
+								</div>
+								<div class="bl13_r"><div class="bl13_ri lz_bl13" data-src="assets/img/bag/10шт..jpg"></div></div>
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
 	<!-- bl12 / При бронировании мы принимаем: -->
 
 	<!-- bl3 / ЭТАПЫ ОТДЫХА -->
 
 	<!-- -->
 	<div class="bl9">
-	<div class="bl_c">
-		<div class="head_c txt_c">
-			<div class="head_v1">
-				<div class="head_vt"><?=t::w('Guest Reviews')?></div>
-				<h4><?=t::w('bl9_of2')?></h4>
+		<div class="bl_c">
+			<div class="head_c txt_c">
+				<div class="head_v1">
+					<div class="head_vt"><?=t::w('Guest Reviews')?></div>
+					<h4><?=t::w('bl9_of2')?></h4>
+				</div>
+			</div>
+			<div class="bl9_c">
+				<div class="swiper-container bl9_con">
+					<div class="swiper-wrapper">
+						<?php
+							$sql = db::query("select * from `review`");
+						while($ana = mysqli_fetch_array($sql)){
+								echo '
+									<div class="swiper-slide bl9_i">
+										<div class="bl9_iln">
+											<div class="bl9_iln2">
+												<div class="bl9_ilogo lazy_rev" data-src="/assets/img/reviews/'.$ana['logo'].'"></div>
+												<div class="bl9_ilc"><div class="bl9_ilname">'.$ana['name'].'</div><div class="bl9_ils">'.t::w('source:').$ana['sn'].'</div></div>
+											</div>
+											<div class="bl9_ildt">
+												'.($ana['star']==5?'<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>':'<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>').'
+											</div>
+										</div>
+										<p class="bl9_it">'.$ana['txt'].'</p>
+									</div>
+								';
+							}
+						?>
+					</div>
+				</div>
+				<div class="swiper-button-prev bl9_prev"><div class="btn btn_sqr"><i class="fal fa-chevron-left"></i></div></div>
+				<div class="swiper-button-next bl9_next"><div class="btn btn_sqr"><i class="fal fa-chevron-right"></i></div></div>
+			</div>
+			<div class="bl9_b">
+				<p><?=t::w('bl9_of3')?></p>
+				<a target="_blank" href="https://wa.me/<?=$site['whatsapp']?>"><div class="btn"><?=t::w('Communication')?></div></a>
 			</div>
 		</div>
-		<div class="bl9_c">
-			<div class="swiper-container bl9_con">
-				<div class="swiper-wrapper">
-					<?php
-						$sql = db::query("select * from `review`");
-				      while($ana = mysqli_fetch_array($sql)){
+	</div>
+
+	<div class="bl11">
+		<div class="bl_c">
+			<div class="bl11_c">
+				<div class="bl11_l">
+					<div class="head_c"><h4><?=t::w('Frequently asked Questions')?></h4></div>
+					<p><?=t::w('bl11_disc')?></p>
+					<div class="bl11_btn"><div class="btn disb_zab"><span><?=t::w('submit your')?></span></div></div>
+					<div class="bl11_a lazy_bag" data-src="/assets/img/bag/doc2.png"></div>
+				</div>
+				<div class="bl11_r">
+					<div class='faq'>
+						<?php
+							$sql = db::query("select * from `blocks` where type = 'bl11' and lang = '$lang' ORDER BY number ASC");
+						while($ana = mysqli_fetch_array($sql)){
 							echo '
-								<div class="swiper-slide bl9_i">
-									<div class="bl9_iln">
-										<div class="bl9_iln2">
-											<div class="bl9_ilogo lazy_rev" data-src="/assets/img/reviews/'.$ana['logo'].'"></div>
-											<div class="bl9_ilc"><div class="bl9_ilname">'.$ana['name'].'</div><div class="bl9_ils">'.t::w('source:').$ana['sn'].'</div></div>
+									<div class="faq-a">
+										<div class="faq-ah">
+											<div class="faq-arrow"><i class="fal fa-chevron-right"></i></div>
+											<h6 class="faq-heading">'.$ana['txt1'].'</h6>
 										</div>
-										<div class="bl9_ildt">
-											'.($ana['star']==5?'<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>':'<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>').'
-										</div>
+									<p class="faq-text">'.$ana['txt2'].'</p>
 									</div>
-									<p class="bl9_it">'.$ana['txt'].'</p>
-								</div>
 							';
 						}
-					?>
-				</div>
-			</div>
- 			<div class="swiper-button-prev bl9_prev"><div class="btn btn_sqr"><i class="fal fa-chevron-left"></i></div></div>
-			<div class="swiper-button-next bl9_next"><div class="btn btn_sqr"><i class="fal fa-chevron-right"></i></div></div>
-		</div>
-		<div class="bl9_b">
-			<p><?=t::w('bl9_of3')?></p>
-			<a target="_blank" href="https://wa.me/<?=$site['whatsapp']?>"><div class="btn"><?=t::w('Communication')?></div></a>
-		</div>
-	</div>
-</div>
-
-<div class="bl11">
-	<div class="bl_c">
-		<div class="bl11_c">
-			<div class="bl11_l">
-				<div class="head_c"><h4><?=t::w('Frequently asked Questions')?></h4></div>
-				<p><?=t::w('bl11_disc')?></p>
-				<div class="bl11_btn"><div class="btn disb_zab"><span><?=t::w('submit your')?></span></div></div>
-				<div class="bl11_a lazy_bag" data-src="/assets/img/bag/doc2.png"></div>
-			</div>
-			<div class="bl11_r">
-				<div class='faq'>
-					<?php
-						$sql = db::query("select * from `blocks` where type = 'bl11' and lang = '$lang' ORDER BY number ASC");
-				      while($ana = mysqli_fetch_array($sql)){
-				      	echo '
-								<div class="faq-a">
-							  		<div class="faq-ah">
-										<div class="faq-arrow"><i class="fal fa-chevron-right"></i></div>
-										<h6 class="faq-heading">'.$ana['txt1'].'</h6>
-							  		</div>
-							      <p class="faq-text">'.$ana['txt2'].'</p>
-							  	</div>
-				      	';
-				      }
-					?>
+						?>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
 
-<div class="bl10">
-	<div class="bl10_a lazy_bag" data-src="/assets/img/bag/bl11bag2.jpg"></div>
-	<div class="bl10_abc">
-		<div class="bl10_ab lazy_bag" data-src="/assets/img/bag/cloud_ab.png" style="--bl10:1"></div>
-		<div class="bl10_ab lazy_bag" data-src="/assets/img/bag/cloud_ab.png" style="--bl10:2"></div>
-		<div class="bl10_ab lazy_bag" data-src="/assets/img/bag/cloud_ab.png" style="--bl10:3"></div>
-		<div class="bl10_ab lazy_bag" data-src="/assets/img/bag/cloud_ab.png" style="--bl10:4"></div>
-		<div class="bl10_ab lazy_bag" data-src="/assets/img/bag/cloud_ab.png" style="--bl10:5"></div>
-	</div>
-	<div class="bl10_c">
-		<div class="head_c txt_c">
-			<h4><?=t::w('Still have questions?')?></h4>
-			<p><?=t::w('bl10_w')?></p>
-		</div>
-		<div class="form_c">
-			<div class="form_im dsp_n"><input type="text" class="sms" value="Консультация 2"></div>
-			<div class="form_im"><input type="tel" placeholder="+7 (___) ___-__-__" class="form_im_txt phone ms_phone"></div>
-			<div class="form_im"><div class="btn send"><span><?=t::w('submit your')?></span></div></div>
-		</div>
-	</div>
-</div>
 
 <? include 'block/footer.php'; ?>

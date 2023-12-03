@@ -106,6 +106,13 @@
 
 
 
+		// reser
+		public static function reser($id) {
+			$sql = db::query("select * from reser where id = '$id'");
+			if (mysqli_num_rows($sql)) return mysqli_fetch_array($sql); else return null;
+		}
+		
+
 
 
 

@@ -54,7 +54,7 @@ $(document).ready(function() {
 		var name = $(this).parent().siblings().children('.name')
 		var phone = $(this).parent().siblings().children('.phone')
 
-		if (name.attr('data-pr') != 1 || phone.attr('data-pr') != 1) { mess('Введите свой данный') } 
+		if (name.attr('data-sel') != 1 || phone.attr('data-sel') != 1) { mess('Введите свой данный') } 
 		else {
 			$.ajax({
 				url: "/config/send.php?mess",
@@ -65,9 +65,9 @@ $(document).ready(function() {
 					if (data == 'yes') { 
 						mess('Успешно отправлено')
 						phone.val('')
-						phone.attr('data-pr', 0)
+						phone.attr('data-sel', 0)
 						name.val('')
-						name.attr('data-pr', 0)
+						name.attr('data-sel', 0)
 					} else {
 						mess('Пожалуйста, перезагрузите сайт <br>и попробуйте еще раз')
 						console.log(data);
@@ -87,7 +87,7 @@ $(document).ready(function() {
 		var sms = $(this).parent().siblings().children('.sms')
 		var phone = $(this).parent().siblings().children('.phone')
 
-		if (phone.attr('data-pr') != 1) { mess('Введите свой данный') } 
+		if (phone.attr('data-sel') != 1) { mess('Введите свой данный') } 
 		else {
 			$.ajax({
 				url: "/config/send.php?sms",
@@ -98,7 +98,7 @@ $(document).ready(function() {
 					if (data == 'yes') { 
 						mess('Успешно отправлено')
 						phone.val('')
-						phone.attr('data-pr', 0)
+						phone.attr('data-sel', 0)
 					} else {
 						mess('Пожалуйста, перезагрузите сайт <br>и попробуйте еще раз')
 					}
@@ -115,7 +115,7 @@ $(document).ready(function() {
 		var msg = $('#test1').serialize();
 		var phone = $('.phone2')
 
-		if (phone.attr('data-pr') != 1) {
+		if (phone.attr('data-sel') != 1) {
 			mess('Введите свой данный')
 		} else {
 			$.ajax({

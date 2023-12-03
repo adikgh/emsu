@@ -16,43 +16,43 @@ $(document).ready(function() {
 
 
 	// 
-	var sana_bl1b = new Swiper('.sana_bl1b', {
-      slidesPerView: 'auto',
-      freeMode: true,
-      watchSlidesVisibility: true,
-      watchSlidesProgress: true,
-      loop: true,
-   	centeredSlides: true,
-   });
-   var sana_bl1t = new Swiper('.sana_bl1t', {
-      slidesPerView: 1,
-      loop: true,
-   	centeredSlides: true,
-   	effect: 'fade',
-   	fadeEffect: {crossFade:true},
-      navigation:{nextEl:'.sana_bl1t_next',prevEl:'.sana_bl1t_prev'},
-      on:{slideChange:function(){$('.lazy_sana_img').lazy({effect:"fadeIn",effectTime:500,threshold:0})}},
-      pagination:{el:'.sana_bl1t_pag',dynamicBullets:true},
-      breakpoints: {769:{thumbs:{swiper:sana_bl1b}}},
-   });
+	// var sana_bl1b = new Swiper('.sana_bl1b', {
+   //    slidesPerView: 'auto',
+   //    freeMode: true,
+   //    watchSlidesVisibility: true,
+   //    watchSlidesProgress: true,
+   //    loop: true,
+   // 	centeredSlides: true,
+   // });
+   // var sana_bl1t = new Swiper('.sana_bl1t', {
+   //    slidesPerView: 1,
+   //    loop: true,
+   // 	centeredSlides: true,
+   // 	effect: 'fade',
+   // 	fadeEffect: {crossFade:true},
+   //    navigation:{nextEl:'.sana_bl1t_next',prevEl:'.sana_bl1t_prev'},
+   //    on:{slideChange:function(){$('.lazy_sana_img').lazy({effect:"fadeIn",effectTime:500,threshold:0})}},
+   //    pagination:{el:'.sana_bl1t_pag',dynamicBullets:true},
+   //    breakpoints: {769:{thumbs:{swiper:sana_bl1b}}},
+   // });
 
 
    // 
-   var sana_bl3_ct = new Swiper('.sana_bl3_ct', {
-      slidesPerView: 'auto',
-      freeMode: true,
-      watchSlidesVisibility: true,
-      watchSlidesProgress: true,
-      breakpoints: {426:{allowTouchMove:false}},
-   });
-   var sana_bl3_cb = new Swiper('.sana_bl3_cb', {
-      slidesPerView: 1,
-      autoHeight: true,
-   	allowTouchMove: false,
-   	effect: 'fade',
-   	fadeEffect: {crossFade:true},
-      thumbs: {swiper:sana_bl3_ct},
-   });
+   // var sana_bl3_ct = new Swiper('.sana_bl3_ct', {
+   //    slidesPerView: 'auto',
+   //    freeMode: true,
+   //    watchSlidesVisibility: true,
+   //    watchSlidesProgress: true,
+   //    breakpoints: {426:{allowTouchMove:false}},
+   // });
+   // var sana_bl3_cb = new Swiper('.sana_bl3_cb', {
+   //    slidesPerView: 1,
+   //    autoHeight: true,
+   // 	allowTouchMove: false,
+   // 	effect: 'fade',
+   // 	fadeEffect: {crossFade:true},
+   //    thumbs: {swiper:sana_bl3_ct},
+   // });
 
 
    // 

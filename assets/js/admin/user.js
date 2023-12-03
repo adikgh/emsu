@@ -663,6 +663,7 @@ $(document).ready(function() {
 					arrival_dt: $('.ins_reser_arrival').attr('data-val'), 
 					many_dt: $('.ins_reser_many').attr('data-val'),
 					of_number: $('.ins_reser_of_number').attr('data-val'),
+					children: $('.ins_reser_children').attr('data-val'),
 					sana_id: $('.ins_reser_sana').attr('data-val'), sana_name: $('.ins_reser_sana').html(),
 					room_id: $('.ins_reser_room').attr('data-val'), room_name: $('.ins_reser_room').html(),
 					room_rate: $('.ins_reser_room_rate').attr('data-val'), room_rate_alt: $('.ins_reser_room_rate').val(),
@@ -685,10 +686,93 @@ $(document).ready(function() {
 
 
 
+	// cours add block
+	// $('.reser_edti_pop').click(function(){
+	// 	$('.reser_edit_block').addClass('pop_bl_act');
+	// 	$('#html').addClass('ovr_h');
+
+	// 	id = $(this).parents('tr').attr('data-id')
+	// 	$('.btn_reser_edit').attr('data-id', id)
+
+	// 	$.ajax({
+	// 		url: "/admin/reser/edit s.php?view",
+	// 		type: "POST",
+	// 		dataType: "html",
+	// 		data: ({ id: id, }),
+	// 		beforeSend: function(){ },
+	// 		error: function(data){ console.log(data) },
+	// 		success: function(data){
+	// 			if (data) {
+	// 				$('.reser_edit_ng').html(data)
+					
+	// 				$('.fr_number').mask('# ##0', {reverse: true});
+	// 				$('.fr_date').mask('00.00.0000', {reverse: true});
+	// 				$('.fr_days').mask('000 күн', {reverse: true});
+	// 				$('.fr_price').mask('#.##0 тг', {reverse: true});
+	// 				$('.fr_phone').mask('8 (000) 000-00-00');
+	// 			}
+	// 			else console.log(data)
+	// 		},
+	// 	})
+	// })
+	// $('.reser_edit_back').click(function(){
+	// 	$('.reser_edit_block').removeClass('pop_bl_act');
+	// 	$('#html').removeClass('ovr_h');
+	// })
+	// 
+	$('.btn_reser_edit').click(function () {
+		$.ajax({
+			url: "/admin/reser/get.php?reser_edit",
+			type: "POST",
+			dataType: "html",
+			data: ({
+				id: $('.btn_reser_edit').attr('data-id'),
+				name: $('.ins_reser_name').attr('data-val'),
+				phone: $('.ins_reser_phone').attr('data-val'), phone_alt: $('.ins_reser_phone').val(),
+				arrival_dt: $('.ins_reser_arrival').attr('data-val'), 
+				many_dt: $('.ins_reser_many').attr('data-val'),
+				of_number: $('.ins_reser_of_number').attr('data-val'),
+				children: $('.ins_reser_children').attr('data-val'),
+				sana_id: $('.ins_reser_sana').attr('data-val'), sana_name: $('.ins_reser_sana').html(),
+				room_id: $('.ins_reser_room').attr('data-val'), room_name: $('.ins_reser_room').html(),
+				room_rate: $('.ins_reser_room_rate').attr('data-val'), room_rate_alt: $('.ins_reser_room_rate').val(),
+				prepayment: $('.ins_reser_prepayment').attr('data-val'), prepayment_alt: $('.ins_reser_prepayment').val(),
+				manager_id: $('.ins_reser_manager').attr('data-val'), manager_name: $('.ins_reser_manager').html(),
+				percent: $('.ins_reser_percent').attr('data-val'),
+				reser_dt: $('.ins_reser_dt').attr('data-val'),
+			}),
+			success: function(data){
+				if (data == 'plus') location.reload();
+				else console.log(data)
+			},
+			beforeSend: function(){ },
+			error: function(data){ console.log(data) }
+		})
+	})
 
 
 
 
+
+
+
+
+	// del_lesson_b
+	$('html').on('click', '.reser_del', function(){
+		id = $(this).parents('tr').attr('data-id')
+		$.ajax({
+			url: "/admin/reser/get.php?reser_del",
+			type: "POST",
+			dataType: "html",
+			data: ({ id: id, }),
+			beforeSend: function(){ },
+			error: function(data){ console.log(data) },
+			success: function(data){
+				if (data == 'yes') location.reload();
+				else console.log(data)
+			},
+		})
+	})
 
 
 

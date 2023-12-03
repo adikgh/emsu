@@ -284,3 +284,39 @@ td .fr_phone{
 .qtable::-webkit-scrollbar-track{background:var(--tr)}
 .qtable::-webkit-scrollbar-track-piece{background:var(--tr)}
 /* @media(max-width:780px){::-webkit-scrollbar{display:none}} */
+
+
+
+
+
+
+
+
+
+/*  */
+.qtable_btnc{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.qtable_btn{
+    position: relative;
+    width: 34px;
+    height: 34px;
+    border-radius: 34px;
+    margin-right: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    cursor: pointer;
+}
+.qtable_btn:last-child{
+    margin-right: 0;
+}
+.qtable_btn:hover{
+    background: var(--gr5);
+}

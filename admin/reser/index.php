@@ -162,13 +162,15 @@
 					<thead>
 						<tr>
 							<th class="txt_c qtable_n">#</th>
+							<th class=""></th>
 							<!-- <th class="">Дәрежесі</th> -->
 							<th class="qtable_id">Брон нөмері</th>	
 							<th class="">Қонақ (аты-жөні)</th>
 							<th class="txt_c qtable_ph">Телефон</th>
 							<th class="qtable_mn140 txt_c">Келетін күні</th>
 							<th class="qtable_mn140 txt_c qtable_2dt">Неше күнге</th>
-							<th class="qtable_mn140 txt_c qtable_sn">Адам н/c <br> бөлме саны</th>
+							<th class="qtable_mn140 txt_c qtable_sn">Қонақ н/c <br> бөлме саны</th>
+							<th class="qtable_mn140 txt_c qtable_sn">Балалар саны</th>
 							<th class="txt_c">Шипажай</th>
 							<th class="qtable_mn140 txt_c">Бөлме түрі</th>
 							<th class="qtable_mn140 txt_c">Бөлме құны</th>
@@ -184,13 +186,10 @@
 								<th class="qtable_mn140 txt_c">Бонус (10%)</th>
 							<? endif ?>
 							<th class="qtable_mn140 txt_c">Брон жасалған күні</th>
-							<!-- <th></th> -->
-							<!-- <th></th> -->
+							<th></th>
 						</tr>
 						<tr class="qtable_all">
-							<!-- <th class="txt_c qtable_n"></th> -->
-							<!-- <th class="txt_c qtable_n"></th> -->
-							<th class="" colspan="9">Жалпы</th>	
+							<th class="" colspan="11">Жалпы</th>	
 							<th class="qtable_mn140 txt_r">
 								<div class="fr_price"><?=$rash['sum(room_rate)']?></div>
 							</th>
@@ -218,8 +217,7 @@
 								</th>
 							<? endif ?>
 							<th class="qtable_mn140 txt_c"></th>
-							<!-- <th></th> -->
-							<!-- <th></th> -->
+							<th></th>
 						</tr>
 					</thead>
 	
@@ -228,8 +226,11 @@
 						<? while($reser_d = mysqli_fetch_assoc($reser)): ?>
 							<? $reser_id = $reser_d['id']; $n++; ?>
 							
-							<tr>
+							<tr data-id="<?=$reser_id?>">
 								<td class="txt_c qtable_n"><?=$n?></td>
+								<td class="qtable_btnc">
+									<a class="qtable_btn " href="edit.php?id=<?=$reser_id?>"><i class="far fa-pen"></i></a>
+								</td>
 								<!-- <td class=""><?=$reser_d['status_id']?></td> -->
 								<td class="qtable_id"><?=$reser_d['id']?></td>
 								<td class=""><?=$reser_d['name']?></td>
@@ -239,6 +240,7 @@
 								<td class="txt_c"><?=($reser_d['arrival_dt']?date("d.m.Y", strtotime($reser_d['arrival_dt'])):'')?></td>
 								<td class="txt_c qtable_2dt"><?=$reser_d['many_dt']?></td>
 								<td class="txt_c qtable_sn"><?=$reser_d['of_number']?></td>
+								<td class="txt_c qtable_sn"><?=$reser_d['children']?></td>
 								<td class=""><?=fun::sana($reser_d['sana_id'])['name']?></td>
 								<td class="txt_r"><?=fun::number_type($reser_d['room_id'])['name']?></td>
 								<td class="txt_r">
@@ -268,8 +270,9 @@
 									</td>
 								<? endif ?>
 								<td class="txt_c"><?=date("d.m.Y", strtotime($reser_d['reser_dt']))?></td>
-								<!-- <td><?//=?></td> -->
-								<!-- <td><?//=?></td> -->
+								<td class="qtable_btnc">
+									<div class="qtable_btn reser_del"><i class="far fa-trash"></i></div>
+								</td>
 							</tr>
 		
 						<? endwhile ?>
@@ -297,29 +300,34 @@
 					
 					<div class="form_im">
 						<div class="form_span">Қонақ (аты-жөні):</div>
-						<input type="text" class="form_txt _name ins_reser_name" placeholder="Атауын жазыңыз" data-lenght="2" />
+						<input type="text" class="form_txt ins_reser_name" placeholder="Атауын жазыңыз" data-lenght="2" />
 						<i class="fal fa-text form_icon"></i>
 					</div>
 					
 					<div class="form_im">
 						<div class="form_span">Телефон:</div>
-						<input type="tel" class="form_txt fr_phone ins_reser_phone" placeholder="8 (777) 777-77-77" data-lenght="2" />
+						<input type="tel" class="form_txt fr_phone ins_reser_phone" placeholder="8 (777) 777-77-77" />
 						<i class="fal fa-phone-alt form_icon"></i>
 					</div>
 					<div class="form_im">
 						<div class="form_span">Келетін күні:</div>
-						<input type="text" class="form_txt fr_date ins_reser_arrival" placeholder="01.01.2024" data-lenght="2" />
+						<input type="text" class="form_txt fr_date ins_reser_arrival" placeholder="01.01.2024" />
 						<!-- <input type="date" name="" id=""> -->
 						<i class="fal fa-calendar-alt form_icon"></i>
 					</div>
 					<div class="form_im">
 						<div class="form_span">Неше күнге:</div>
-						<input type="tel" class="form_txt fr_number ins_reser_many" placeholder="10" data-lenght="2" data-val="10" />
+						<input type="tel" class="form_txt fr_number ins_reser_many" placeholder="10" data-val="10" />
 						<i class="fal fa-calendar-exclamation form_icon"></i>
 					</div>
 					<div class="form_im">
-						<div class="form_span">Адам н/c бөлме саны:</div>
-						<input type="tel" class="form_txt fr_number ins_reser_of_number" placeholder="2" data-lenght="2" data-val="2" />
+						<div class="form_span">Қонақ н/c бөлме саны:</div>
+						<input type="tel" class="form_txt fr_number ins_reser_of_number" placeholder="2" data-val="2" />
+						<i class="fal fa-users form_icon"></i>
+					</div>
+					<div class="form_im">
+						<div class="form_span">Балалар саны:</div>
+						<input type="tel" class="form_txt fr_number ins_reser_children" placeholder="0" data-val="0" />
 						<i class="fal fa-users form_icon"></i>
 					</div>
 
@@ -353,18 +361,18 @@
 					
 					<div class="form_im">
 						<div class="form_span">Бөлме құны:</div>
-						<input type="tel" class="form_txt fr_price ins_reser_room_rate" placeholder="10.000 тг" data-lenght="2" />
+						<input type="tel" class="form_txt fr_price ins_reser_room_rate" placeholder="10.000 тг" />
 						<i class="fal fa-tenge form_icon"></i>
 					</div>
 					<div class="form_im">
 						<div class="form_span">Алғашқы төлем:</div>
-						<input type="tel" class="form_txt fr_price ins_reser_prepayment" placeholder="10.000 тг" data-lenght="2" />
+						<input type="tel" class="form_txt fr_price ins_reser_prepayment" placeholder="10.000 тг" />
 						<i class="fal fa-tenge form_icon"></i>
 					</div>
 
 					<? if ($user['super_rights']): ?>
 						<div class="form_im form_sel">
-							<div class="form_span">Маман:</div>
+							<div class="form_span">Менеджер:</div>
 							<? $manager_one = mysqli_fetch_assoc(db::query("select * from user where manager = 1 limit 1")); ?>
 							<div class="form_txt sel_clc ins_reser_manager" data-val="<?=$manager_one['id']?>">Таңдау: <?=$manager_one['name']?></div>
 							<i class="fal fa-bed form_icon"></i>
@@ -378,18 +386,21 @@
 						</div>
 						<div class="form_im">
 							<div class="form_span">Шиапжай беретін %:</div>
-							<input type="tel" class="form_txt fr_number ins_reser_percent" placeholder="15" data-lenght="2" data-val="15" />
+							<input type="tel" class="form_txt fr_number ins_reser_percent" placeholder="15" data-val="15" />
 							<i class="fal fa-percent form_icon"></i>
 						</div>
 						<div class="form_im">
 							<div class="form_span">Брондалған күні:</div>
-							<input type="text" class="form_txt fr_date ins_reser_dt" placeholder="01.01.2024" data-lenght="2" />
+							<input type="text" class="form_txt fr_date ins_reser_dt" placeholder="01.01.2024" />
 							<i class="fal fa-calendar-alt form_icon"></i>
 						</div>
 					<? endif ?>
 
 					<div class="form_im form_im_bn">
-						<div class="btn btn_reser_add"><i class="far fa-check"></i><span>Сақтау</span></div>
+						<div class="btn btn_reser_add">
+							<i class="far fa-check"></i>
+							<span>Сақтау</span>
+						</div>
 					</div>
 				</div>
 			</div>

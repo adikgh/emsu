@@ -1,4 +1,8 @@
-<?php if ($url == '/sana/') $url_n = '/catalog/'; else if ($url == '/sana/numbers.php') $url_n = '/sana/?id='.$id; else $url_n = '/sana/numbers.php?id='.$id; ?>
+<? 
+	if ($url == '/sana/') $url_n = '/catalog/';
+	else if ($url == '/sana/numbers.php') $url_n = '/sana/?id='.$id;
+	else $url_n = '/sana/numbers.php?id='.$id;
+?>
 
 <div class="header_sana">
 	<div class="header_sana_c">

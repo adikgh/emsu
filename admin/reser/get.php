@@ -20,6 +20,7 @@
 		$arrival_dt_alt = @strip_tags($_POST['arrival_dt']); $arrival_dt = date("Y-m-d", strtotime($arrival_dt_alt));
 		$many_dt = @strip_tags($_POST['many_dt']);
 		$of_number = @strip_tags($_POST['of_number']);
+		$children = @strip_tags($_POST['children']);
 		$sana_id = @strip_tags($_POST['sana_id']); $sana_name = @strip_tags($_POST['sana_name']); 
 		$room_id = @strip_tags($_POST['room_id']); $room_name = @strip_tags($_POST['room_name']); 
 		$room_rate = @strip_tags($_POST['room_rate']); $room_rate_alt = @strip_tags($_POST['room_rate_alt']);
@@ -33,6 +34,7 @@
 			if ($arrival_dt) $upd = db::query("UPDATE `reser` SET `arrival_dt`='$arrival_dt' WHERE `id`='$id'");
 			if ($many_dt) $upd = db::query("UPDATE `reser` SET `many_dt`='$many_dt' WHERE `id`='$id'");
 			if ($of_number) $upd = db::query("UPDATE `reser` SET `of_number`='$of_number' WHERE `id`='$id'");
+			if ($children) $upd = db::query("UPDATE `reser` SET `children`='$children' WHERE `id`='$id'");
 			if ($sana_id) $upd = db::query("UPDATE `reser` SET `sana_id`='$sana_id' WHERE `id`='$id'");
 			if ($room_id) $upd = db::query("UPDATE `reser` SET `room_id`='$room_id' WHERE `id`='$id'");
 			if ($room_rate) $upd = db::query("UPDATE `reser` SET `room_rate`='$room_rate' WHERE `id`='$id'");
@@ -43,17 +45,18 @@
 
 			$txt = '';
 			$arr = [
-				'Брон нөмері: '			=> $id,
-				'Қонақ (аты-жөні): '	=> $name,
-				'Телефон: ' 			=> $phone_alt,
-				'Келетін күні: ' 		=> $arrival_dt_alt,
-				'Неше күнге: ' 			=> $many_dt,
-				'Адам н/c бөлме саны: '	=> $of_number,
-				'Шипажай: ' 			=> $sana_name,
-				'Бөлме түрі: '			=> $room_name,
-				'Бөлме құны: '			=> $room_rate_alt,
-				'Алғашқы төлем: ' 		=> $prepayment_alt,
-				'Менеджер: ' 			=> $manager_name,
+				'Жаңа брон: '				=> $id,
+				'Қонақ (аты-жөні): '		=> $name,
+				'Телефон: ' 				=> $phone_alt,
+				'Келетін күні: ' 			=> $arrival_dt_alt,
+				'Неше күнге: ' 				=> $many_dt,
+				'Қонақ н/c бөлме саны: ' 	=> $of_number,
+				'Балалар саны: '			=> $children,
+				'Шипажай: ' 				=> $sana_name,
+				'Бөлме түрі: '				=> $room_name,
+				'Бөлме құны: '				=> $room_rate_alt,
+				'Алғашқы төлем: ' 			=> $prepayment_alt,
+				'Менеджер: ' 				=> $manager_name,
 			];
 			foreach($arr as $key => $value) {
 				if ($value) $txt .= "<b>".$key."</b> ".$value."%0A";
@@ -64,6 +67,97 @@
 		
 		exit();
 	}
+
+
+	// 
+	if(isset($_GET['reser_edit'])) {
+		$id = @strip_tags($_POST['id']);
+		$name = @strip_tags($_POST['name']);
+		$phone = @strip_tags($_POST['phone']); if ($phone) $phone_alt = @strip_tags($_POST['phone_alt']);
+		$manager_id = @strip_tags($_POST['manager_id']); if ($manager_id) $manager_name = @strip_tags($_POST['manager_name']);
+
+		$arrival_dt_alt = @strip_tags($_POST['arrival_dt']); if ($arrival_dt_alt) $arrival_dt = date("Y-m-d", strtotime($arrival_dt_alt));
+		$many_dt = @strip_tags($_POST['many_dt']);
+		$of_number = @strip_tags($_POST['of_number']);
+		$children = @strip_tags($_POST['children']);
+		$sana_id = @strip_tags($_POST['sana_id']); if ($sana_id) $sana_name = @strip_tags($_POST['sana_name']); 
+		$room_id = @strip_tags($_POST['room_id']); if ($room_id) $room_name = @strip_tags($_POST['room_name']); 
+		$room_rate = @strip_tags($_POST['room_rate']); if ($room_rate) $room_rate_alt = @strip_tags($_POST['room_rate_alt']);
+		$prepayment = @strip_tags($_POST['prepayment']); if ($prepayment) $prepayment_alt = @strip_tags($_POST['prepayment_alt']);
+		$percent = @strip_tags($_POST['percent']);
+		$reser_dt = date("Y-m-d", strtotime(@strip_tags($_POST['reser_dt'])));
+		
+		
+		if ($id) {
+			if ($name) $upd = db::query("UPDATE `reser` SET `name`='$name' WHERE `id`='$id'");
+			if ($phone) $upd = db::query("UPDATE `reser` SET `phone`='$phone' WHERE `id`='$id'");
+			if ($manager_id) $upd = db::query("UPDATE `reser` SET `manager_id`='$manager_id' WHERE `id`='$id'");
+
+			if (@$arrival_dt) $upd = db::query("UPDATE `reser` SET `arrival_dt`='$arrival_dt' WHERE `id`='$id'");
+			if ($many_dt) $upd = db::query("UPDATE `reser` SET `many_dt`='$many_dt' WHERE `id`='$id'");
+			if ($of_number) $upd = db::query("UPDATE `reser` SET `of_number`='$of_number' WHERE `id`='$id'");
+			if ($children) $upd = db::query("UPDATE `reser` SET `children`='$children' WHERE `id`='$id'");
+			if ($sana_id) $upd = db::query("UPDATE `reser` SET `sana_id`='$sana_id' WHERE `id`='$id'");
+			if ($room_id) $upd = db::query("UPDATE `reser` SET `room_id`='$room_id' WHERE `id`='$id'");
+			if ($room_rate) $upd = db::query("UPDATE `reser` SET `room_rate`='$room_rate' WHERE `id`='$id'");
+			if ($prepayment) $upd = db::query("UPDATE `reser` SET `prepayment`='$prepayment' WHERE `id`='$id'");
+			if ($percent) $upd = db::query("UPDATE `reser` SET `percent`='$percent' WHERE `id`='$id'");
+			if ($reser_dt) $upd = db::query("UPDATE `reser` SET `reser_dt`='$reser_dt' WHERE `id`='$id'");
+
+
+			$txt = '';
+			$arr = [
+				'Брондағы өзгеріс: '		=> $id,
+				'Қонақ (аты-жөні): '		=> $name,
+				'Телефон: ' 				=> @$phone_alt,
+				'Келетін күні: ' 			=> $arrival_dt_alt,
+				'Неше күнге: ' 				=> $many_dt,
+				'Қонақ н/c бөлме саны: ' 	=> $of_number,
+				'Балалар саны: '			=> $children,
+				'Шипажай: ' 				=> $sana_name,
+				'Бөлме түрі: '				=> $room_name,
+				'Бөлме құны: '				=> @$room_rate_alt,
+				'Алғашқы төлем: ' 			=> @$prepayment_alt,
+				'Менеджер: ' 				=> $manager_name,
+			];
+			foreach($arr as $key => $value) {
+				if ($value) $txt .= "<b>".$key."</b> ".$value."%0A";
+			}
+			$sendToTelegram = fopen("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&parse_mode=html&text={$txt}","r");
+			if ($sendToTelegram) echo 'plus'; else echo "error";
+		}
+
+		
+		exit();
+	}
+
+
+
+
+
+
+
+	// 
+	if(isset($_GET['reser_del'])) {
+		$id = strip_tags($_POST['id']);
+		$del = db::query("DELETE FROM `reser` WHERE `id` = '$id'");
+		if ($del) echo 'yes';
+		exit();
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	// 
 	if(isset($_GET['item_edit'])) {
@@ -90,14 +184,6 @@
 		else $upd = db::query("UPDATE `sana` SET `arh` = 0 WHERE `id` = '$id'");
 
 		if ($upd) echo 'yes';
-		exit();
-	}
-
-	// 
-	if(isset($_GET['cours_del'])) {
-		$id = strip_tags($_POST['id']);
-		$del = db::query("DELETE FROM `sana` WHERE `id` = '$id'");
-		if ($del) echo 'yes';
 		exit();
 	}
 

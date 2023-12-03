@@ -50,7 +50,7 @@ $(document).ready(function() {
 		$(this).attr('data-val', val)
 		if ($(this).attr('data-lenght') <= val.length) {
 			$(this).attr('data-sel', 1);
-		} else {$(this).attr('data-sel',0)}
+		} else {$(this).attr('data-sel', 0)}
 	});
 	$('html').on('input', 'input.youtube', function(){
 		val = $(this).val().replace('https://', '').replace('www.', '').replace('youtube.com/watch?v=', '').replace('youtu.be/', '').replace(/\&.*/, '');
